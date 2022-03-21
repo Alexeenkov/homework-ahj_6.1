@@ -1,8 +1,5 @@
-import Board from "./Board";
-
-export default class Points extends Board {
-  constructor(boardSize) {
-    super(boardSize);
+export default class Points {
+  constructor() {
     this.hitPoints = document.getElementById("hit");
     this.missPoints = document.getElementById("miss");
   }
@@ -14,6 +11,5 @@ export default class Points extends Board {
 
   addMissPoint() {
     this.missPoints.textContent = Number(this.missPoints.textContent) + 1;
-    if (this.missPoints.textContent === "5") this.endGame();
   }
 }

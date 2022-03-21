@@ -1,9 +1,8 @@
-import Mobs from "./Mobs";
+import Points from "./Points";
 
-export default class Mechanics extends Mobs {
-  // eslint-disable-next-line no-useless-constructor
-  constructor(boardSize) {
-    super(boardSize);
+export default class Mechanics {
+  constructor() {
+    this.points = new Points();
     this.stopButton = document.querySelector(".button__end");
     this.startButton = document.querySelector(".button__start");
     this.informer = document.getElementById("informer");
@@ -16,7 +15,7 @@ export default class Mechanics extends Mobs {
       boardCell.addEventListener("click", (e) => {
         this.beatHammer();
         if (e.target.classList.contains("_active")) {
-          this.addHitPoint(e);
+          this.points.addHitPoint(e);
         }
       });
     }
@@ -31,8 +30,6 @@ export default class Mechanics extends Mobs {
   }
 
   stop(stopButtonClick) {
-    clearInterval(this.intervalShowGoblins);
-    this.startButton.addEventListener("click", this.start);
     if (stopButtonClick)
       this.informer.textContent =
         "Игра закончена. Отдохните и возвращайтесь в игру :)";

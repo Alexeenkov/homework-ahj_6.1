@@ -1,9 +1,11 @@
 import Points from "./Points";
+import Mechanics from "./Mechanics";
 
-export default class Mobs extends Points {
-  // eslint-disable-next-line no-useless-constructor
+export default class Mobs {
   constructor(boardSize) {
-    super(boardSize);
+    this.points = new Points();
+    this.mechanics = new Mechanics();
+    this.boardSize = boardSize;
   }
 
   /**
@@ -16,7 +18,11 @@ export default class Mobs extends Points {
       const activeCell = document.querySelector("._active");
       if (activeCell) {
         activeCell.classList.remove("_active");
-        this.addMissPoint();
+        this.points.addMissPoint();
+        if (this.points.missPoints.textContent === "5") {
+          this.mechanics.endGame();
+          clearInterval(this.intervalShowGoblins);
+        }
       }
       cells[randomCell].classList.add("_active");
     }, 1000);
