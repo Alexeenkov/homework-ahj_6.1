@@ -1,3 +1,7 @@
+/**
+ * Класс "Доска" позволяет создать квадратное поле
+ * @param {Number} boardSize - ширина доски в клетках
+ */
 export default class Board {
   constructor(boardSize) {
     this.boardSize = boardSize;
