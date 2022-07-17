@@ -1,5 +1,6 @@
-import Game from "./Game";
+import Trello from "./Trello";
 
-const game = new Game(4);
-
-game.init();
+document.addEventListener('DOMContentLoaded', () => {
+    const trello = new Trello();
+    trello.init();
+});
