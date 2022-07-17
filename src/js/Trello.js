@@ -46,7 +46,7 @@ export default class Trello {
         const cardsBlock = e.target.closest('.js-board').querySelector('.js-cards');
         const card = document.createElement('div');
         card.classList.add('trello__card', 'js-card');
-        card.innerHTML = '<span class="js-card-text"></span>';
+        card.innerHTML = '<span class="trello__card-text js-card-text"></span>';
         card.querySelector('.js-card-text').textContent = textCard.value;
         cardsBlock.append(card);
         // Вставляем крестик на карточку (удалить карточку)

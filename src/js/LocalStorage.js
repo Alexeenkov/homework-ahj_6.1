@@ -31,7 +31,7 @@ export default class LocalStorage {
           // Создаем и вставляем карточку
           const card = document.createElement('div');
           card.classList.add('trello__card', 'js-card');
-          card.innerHTML = '<span class="js-card-text"></span>';
+          card.innerHTML = '<span class="trello__card-text js-card-text"></span>';
           card.querySelector('.js-card-text').textContent = textCard;
           boardCards.append(card);
           // Вставляем крестик на карточку (удалить карточку)

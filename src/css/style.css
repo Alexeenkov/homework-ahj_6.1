@@ -98,6 +98,10 @@ body._grabbing * {
   pointer-events: none !important;
 }
 
+.trello__card-text {
+  pointer-events: none;
+}
+
 .trello__delete-card {
   position: absolute;
   opacity: 0;
