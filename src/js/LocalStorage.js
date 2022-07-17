@@ -21,6 +21,7 @@ export default class LocalStorage {
   }
 
   extractCards() {
+    if (!localStorage.trelloUserContent) return;
     const array = JSON.parse(localStorage.trelloUserContent);
     const boadrs = this.trello.querySelectorAll('.js-board');
     array.forEach((board, index) => {
